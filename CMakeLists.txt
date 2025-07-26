@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.22.0)
 include(FetchContent)
-project(ArenaShooter VERSION 0.1.0 LANGUAGES C CXX)
+project(ShapeArena VERSION 0.1.0 LANGUAGES C CXX)
 
 # Generate compile_commands.json
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
