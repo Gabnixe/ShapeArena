@@ -2,6 +2,14 @@
 
 class World
 {
+    public:
+        World();
+        void Update();
+        void Draw();
+        ~World();
 
+    private:
+        b2WorldId worldId;
+        int lengthUnitsPerMeter;
 
 };
