@@ -22,11 +22,7 @@ Player::Player(b2WorldId worldId, Vector2 startingPosition, Color playerColor)
 void Player::Update(float deltaTime, Wall *wall)
 {
     Vector2 movement = GetMovement();
-    float frameAdjustedSpeed = speed * deltaTime;
-    movement *= frameAdjustedSpeed;
-
-    Vector2 newPosition = position + movement;
-    position = newPosition;
+    b2Body_SetLinearVelocity(bodyId, b2Vec2{GetMovement().x, GetMovement().y} * 100);
 
     aimAngle = Vector2Angle(Vector2{1,0}, GetMousePosition() - position);
 }

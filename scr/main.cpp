@@ -49,7 +49,7 @@ void Init()
 	b2SetLengthUnitsPerMeter(lengthUnitsPerMeter);
 
 	b2WorldDef worldDef = b2DefaultWorldDef();
-	worldDef.gravity.y = 9.8f * lengthUnitsPerMeter;
+	worldDef.gravity.y = 0;
 	worldId = b2CreateWorld(&worldDef);
 
 	player = new Player(worldId, screenCenter);
