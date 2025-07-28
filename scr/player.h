@@ -5,12 +5,15 @@ class Player
 {
     public:
         Player(b2WorldId worldId, Vector2 startingPosition, Color color = WHITE);
+        ~Player();
 
         void Update(float deltaTime);
         void Draw();
 
     private:
         const float speed = 100.f;
+
+        b2WorldId worldId;
 
         b2BodyId bodyId;
 
