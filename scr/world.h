@@ -13,6 +13,4 @@ class World
 
     private:
         b2WorldId worldId;
-        int lengthUnitsPerMeter;
-
 };
