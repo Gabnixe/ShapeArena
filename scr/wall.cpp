@@ -12,10 +12,6 @@ Wall::Wall(b2WorldId worldId, Rectangle startingRectangle)
     b2ShapeId rectangleId = b2CreatePolygonShape(bodyId, &rectangleDef, &rectanglePolygon);
 }
 
-void Wall::Update(float deltaTime)
-{
-}
-
 void Wall::Draw()
 {
     DrawRectangleRec(rectangle, WHITE);

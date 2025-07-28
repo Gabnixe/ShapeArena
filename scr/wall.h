@@ -5,8 +5,7 @@ class Wall
 {
     public:
         Wall(b2WorldId worldId, Rectangle startingRectangle);
-
-        void Update(float deltaTime);
+        
         void Draw();
 
         Rectangle rectangle;

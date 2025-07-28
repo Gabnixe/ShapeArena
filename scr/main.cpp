@@ -17,7 +17,7 @@ World *world;
 int main ()
 {
 	SetConfigFlags(FLAG_WINDOW_HIGHDPI | FLAG_VSYNC_HINT | FLAG_WINDOW_RESIZABLE);
-	InitWindow(screenWidth, screenHeight, "Arena Shooter");
+	InitWindow(screenWidth, screenHeight, "Shape Arena");
 	SetTargetFPS(60);
 
 	//Game Loop

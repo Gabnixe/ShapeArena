@@ -51,6 +51,4 @@ Vector2 Player::GetMovement()
 Vector2 Player::GetPosition()
 {
     b2Vec2 b2Pos = b2Body_GetPosition(bodyId);
-    printf("%4.2f %4.2f\n", position.x, position.y);
-    return (Vector2){b2Pos.x, b2Pos.y};
 }
