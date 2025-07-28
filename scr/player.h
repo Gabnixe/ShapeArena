@@ -8,7 +8,7 @@ class Player
     public:
         Player(b2WorldId worldId, Vector2 startingPosition, Color color = WHITE);
 
-        void Update(float deltaTime, Wall *wall);
+        void Update(float deltaTime);
         void Draw();
 
     private:

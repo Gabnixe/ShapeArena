@@ -4,7 +4,7 @@ class World
 {
     public:
         World();
-        void Update();
+        void Update(float DeltaTime);
         void Draw();
         ~World();
 

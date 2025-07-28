@@ -19,7 +19,7 @@ Player::Player(b2WorldId worldId, Vector2 startingPosition, Color playerColor)
     b2ShapeId circleId = b2CreateCircleShape(bodyId, &circleDef, &circle);
 }
 
-void Player::Update(float deltaTime, Wall *wall)
+void Player::Update(float deltaTime)
 {
     Vector2 movement = GetMovement();
     b2Body_SetLinearVelocity(bodyId, b2Vec2{GetMovement().x, GetMovement().y} * 100);

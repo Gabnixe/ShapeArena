@@ -3,6 +3,20 @@
 World::World()
 {
     b2WorldDef worldDef = b2DefaultWorldDef();
-	worldDef.gravity.y = 9.8f * lengthUnitsPerMeter;
 	worldId = b2CreateWorld(&worldDef);
+}
+
+void World::Update(float DeltaTime)
+{
+
+}
+
+void World::Draw()
+{
+
+}
+
+World::~World()
+{
+	b2DestroyWorld(worldId);
 }
