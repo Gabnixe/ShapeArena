@@ -1,8 +1,6 @@
 #include "raylib.h"
 #include "box2d/box2d.h"
 
-#include "wall.h"
-
 class Player
 {
     public:
