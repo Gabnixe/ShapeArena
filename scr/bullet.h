@@ -6,7 +6,7 @@
 class Bullet : public GameObject
 {
     public:
-        Bullet(b2WorldId worldId, Vector2 position, Vector2 direction, float speed);
+        Bullet(World *world, Vector2 position, Vector2 direction, float speed);
         ~Bullet();
 
         void Update(float deltaTime);

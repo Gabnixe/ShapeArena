@@ -1,6 +1,9 @@
+#ifndef WORLD_H
+#define WORLD_H
+
 #include "box2d/box2d.h"
 
-#include "gameObject.h"
+class GameObject;
 
 //Contain all logic of the game world:
 //Entities + the level
@@ -13,9 +16,13 @@ class World
         void Draw();
         ~World();
 
-        GameObject* AddGameObject();
+        GameObject* AddGameObject(GameObject *gameObject);
         void RemoveGameObject(GameObject *gameObject);
+
+        b2WorldId GetB2WorldId();
 
     private:
         b2WorldId worldId;
 };
+
+#endif

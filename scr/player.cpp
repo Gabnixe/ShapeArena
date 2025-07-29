@@ -8,7 +8,7 @@
 b2WorldId worldId;
 Bullet *bullet;
 
-Player::Player(b2WorldId worldId, Vector2 startingPosition, Color playerColor)
+Player::Player(World *world, Vector2 startingPosition, Color playerColor) : GameObject(world)
 {
     position = startingPosition;
     color = playerColor;
@@ -18,12 +18,10 @@ Player::Player(b2WorldId worldId, Vector2 startingPosition, Color playerColor)
     b2BodyDef bodyDef = b2DefaultBodyDef();
     bodyDef.type = b2_dynamicBody;
     bodyDef.position = (b2Vec2){position.x, position.y};
-    bodyId = b2CreateBody(worldId, &bodyDef);
+    bodyId = b2CreateBody(world->GetB2WorldId(), &bodyDef);
     b2ShapeDef circleDef = b2DefaultShapeDef();
     b2Circle circle = (b2Circle){(b2Vec2){0, 0}, 10};
     b2ShapeId circleId = b2CreateCircleShape(bodyId, &circleDef, &circle);
-
-    this->worldId = worldId;
 }
 
 Player::~Player()
@@ -47,7 +45,7 @@ void Player::Update(float deltaTime)
         {
             delete(bullet);
         }
-        bullet = new Bullet(worldId, GetPosition(), Vector2Rotate(Vector2{1,0}, aimAngle), 1000);
+        bullet = new Bullet(world, GetPosition(), Vector2Rotate(Vector2{1,0}, aimAngle), 1000);
     }
     if (bullet != nullptr)
     {

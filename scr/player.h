@@ -6,7 +6,7 @@
 class Player : public GameObject
 {
     public:
-        Player(b2WorldId worldId, Vector2 startingPosition, Color color = WHITE);
+        Player(World *world, Vector2 startingPosition, Color color = WHITE);
         ~Player();
 
         void Update(float deltaTime);
@@ -14,8 +14,6 @@ class Player : public GameObject
 
     private:
         const float speed = 100.f;
-
-        b2WorldId worldId;
 
         b2BodyId bodyId;
 

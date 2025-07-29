@@ -1,21 +1,12 @@
 #include "gameObject.h"
 
-GameObject::GameObject()
+GameObject::GameObject(World *world)
 {
-
+    world->AddGameObject(this);
+    this->world = world;
 }
 
 GameObject::~GameObject()
 {
-
-}
-
-void GameObject::Update(float deltaTime)
-{
-
-}
-
-void GameObject::Draw()
-{
-    
+    world->RemoveGameObject(this);
 }

@@ -20,9 +20,16 @@ World::World()
 	screenCenter.x = screenWidth/2;
 	screenCenter.y = screenHeight/2;
 
-	player = new Player(worldId, screenCenter);
+	player = new Player(this, screenCenter);
 	Rectangle rectangle = Rectangle{screenCenter.x - 200, screenCenter.y + 100, 400, 100};
 	wall = new Wall(worldId, rectangle);
+}
+
+World::~World()
+{
+	delete(player);
+	delete(wall);
+	b2DestroyWorld(worldId);
 }
 
 void World::Update(float deltaTime)
@@ -38,9 +45,17 @@ void World::Draw()
 	wall->Draw();
 }
 
-World::~World()
+GameObject* World::AddGameObject(GameObject *gameObject)
 {
-	delete(player);
-	delete(wall);
-	b2DestroyWorld(worldId);
+	return gameObject;
+}
+
+void World::RemoveGameObject(GameObject *gameObject)
+{
+	delete(gameObject);
+}
+
+b2WorldId World::GetB2WorldId()
+{
+	return worldId;
 }

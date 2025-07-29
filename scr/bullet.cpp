@@ -1,11 +1,11 @@
 #include "bullet.h"
 
-Bullet::Bullet(b2WorldId worldId, Vector2 position, Vector2 direction, float speed)
+Bullet::Bullet(World *world, Vector2 position, Vector2 direction, float speed) : GameObject(world)
 {
     b2BodyDef bodyDef = b2DefaultBodyDef();
     bodyDef.type = b2_dynamicBody;
     bodyDef.position = (b2Vec2){position.x, position.y};
-    bodyId = b2CreateBody(worldId, &bodyDef);
+    bodyId = b2CreateBody(world->GetB2WorldId(), &bodyDef);
     b2ShapeDef circleDef = b2DefaultShapeDef();
     b2Circle circle = (b2Circle){(b2Vec2){0, 0}, 1};
     b2ShapeId circleId = b2CreateCircleShape(bodyId, &circleDef, &circle);
