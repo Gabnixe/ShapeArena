@@ -1,11 +1,14 @@
+#include "gameObject.h"
+
 #include "raylib.h"
 #include "box2d/box2d.h"
 
-class Bullet
+class Bullet : public GameObject
 {
     public:
         Bullet(b2WorldId worldId, Vector2 position, Vector2 direction, float speed);
         ~Bullet();
+
         void Update(float deltaTime);
         void Draw();
 

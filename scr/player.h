@@ -1,7 +1,9 @@
+#include "gameObject.h"
+
 #include "raylib.h"
 #include "box2d/box2d.h"
 
-class Player
+class Player : public GameObject
 {
     public:
         Player(b2WorldId worldId, Vector2 startingPosition, Color color = WHITE);
