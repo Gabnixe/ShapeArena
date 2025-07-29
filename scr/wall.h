@@ -1,14 +1,15 @@
+#include "gameObject.h"
+
 #include "raylib.h"
 #include "box2d/box2d.h"
 
-class Wall
+class Wall : public GameObject
 {
     public:
-        Wall(b2WorldId worldId, Rectangle startingRectangle);
+        Wall(World *world, Rectangle startingRectangle);
         
         void Draw();
 
-        Rectangle rectangle;
     private:
-
+        Rectangle rectangle;
 };

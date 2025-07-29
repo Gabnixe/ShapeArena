@@ -22,13 +22,13 @@ World::World()
 
 	player = new Player(this, screenCenter);
 	Rectangle rectangle = Rectangle{screenCenter.x - 200, screenCenter.y + 100, 400, 100};
-	wall = new Wall(worldId, rectangle);
+	wall = new Wall(this, rectangle);
 }
 
 World::~World()
 {
-	delete(player);
-	delete(wall);
+	RemoveGameObject(player);
+	RemoveGameObject(wall);
 	b2DestroyWorld(worldId);
 }
 
@@ -52,7 +52,7 @@ GameObject* World::AddGameObject(GameObject *gameObject)
 
 void World::RemoveGameObject(GameObject *gameObject)
 {
-	delete(gameObject);
+	
 }
 
 b2WorldId World::GetB2WorldId()
