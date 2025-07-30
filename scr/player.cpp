@@ -47,10 +47,6 @@ void Player::Update(float deltaTime)
         }
         bullet = new Bullet(world, GetPosition(), Vector2Rotate(Vector2{1,0}, aimAngle), 1000);
     }
-    if (bullet != nullptr)
-    {
-        bullet->Update(deltaTime);
-    }
 }
 
 void Player::Draw()

@@ -9,8 +9,8 @@ class GameObject
         GameObject(World *world);
         ~GameObject();
 
-        void Update(float deltaTime);
-        void Draw();
+        virtual void Update(float deltaTime);
+        virtual void Draw();
     
     protected:
         World *world;

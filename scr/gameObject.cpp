@@ -10,3 +10,13 @@ GameObject::~GameObject()
 {
     world->RemoveGameObject(this);
 }
+
+void GameObject::Update(float deltaTime)
+{
+
+}
+
+void GameObject::Draw()
+{
+
+}

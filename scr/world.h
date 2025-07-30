@@ -1,6 +1,9 @@
 #ifndef WORLD_H
 #define WORLD_H
 
+#include <vector>
+using std::vector;
+
 #include "box2d/box2d.h"
 
 class GameObject;
@@ -23,6 +26,7 @@ class World
 
     private:
         b2WorldId worldId;
+        vector<GameObject*> gameObjects;
 };
 
 #endif
